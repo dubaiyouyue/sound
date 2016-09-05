@@ -18,10 +18,27 @@ Before installation, you are supposed to install Webpack, which is used to bundl
 sudo npm install webpack -g
 ```
 
+Because the new version has used [flac.js](https://github.com/audiocogs/flac.js) and [aurora.js](https://github.com/audiocogs/aurora.js) to decode flac files. Therefore, you have to install some libraries to avoid erros when running `npm install`.
+
+If you are using a Debian System like Ubuntu, you have to install `libasound2`
+
+```bash
+sudo apt-get install libasound2-dev
+```
+
+Or if you are in Windows, to be sure that you have already configured a executable Python.
+
+After download and install a executable version of Python, if you're using Git Bash, you also have to tell the application where to find Python:
+
+```bash
+# Here I assume you install your python in the path: `C/Python/Python36-32/`
+export PATH="$PATH:/C/Python/Python36-32/"
+```
+
 After that, just clone and build it locally:
 
 ```bash
-git clone https://github.com/aleen42/sound.js.git
+git clone https://github.com/aleen42/sound.js.git --recursively
 
 cd sound.js
 
@@ -44,11 +61,11 @@ npm run server 9000
 
 If you want to load songs locally, you can just paste files with a `.mp3` format into the folder: `assets/songs/`. After that, remember to run `npm run build` again to build this project.
 
-*Notice that: this project is temporarily supported MP3 files, and any file without a extension name `.mp3` will not be loaded.*
+*Notice that: this project is temporarily supported MP3 files, and any file without a extension name `.mp3/.flac` will not be loaded.*
 
 #### Optional
 
-If you don't want to use `assets/songs`, you can just override the variable `base` array in the file `load.js`, to specify where to scan mp3 files recursively.
+If you don't want to use `assets/songs`, you can just override the variable `base` array in the file `load.js`, to specify where to scan mp3/flac files recursively.
 
 ```js
 const base = [
