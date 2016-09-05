@@ -26,13 +26,21 @@ If you are using a Debian System like Ubuntu, you have to install `libasound2`
 sudo apt-get install libasound2-dev
 ```
 
-Or if you are in Windows, to be sure that you have already configured a executable Python.
+Or if you are in Windows, to be sure that you have already configured a executable Python(2.7.6).
 
-After download and install a executable version of Python, if you're using Git Bash, you also have to tell the application where to find Python:
+*Notice that: Python 2.7.6 is supported by node-gyp, but the latest one should not.*
+
+After download and install a executable version of Python(2.7.6), if you're using Git Bash, you also have to tell the application where to find Python(2.7.6):
 
 ```bash
-# Here I assume you install your python in the path: `C/Python/Python36-32/`
-export PATH="$PATH:/C/Python/Python36-32/"
+# Here I assume you install your python in the path: `C/Python/Python27/`
+export PATH="$PATH:/C/Python/Python27/"
+```
+
+Besides, due to using C in AV to compile speaker, we have to install a Visual Studio 2013 or other version then set a configurated variable for that:
+
+```bash
+npm config set msvs_version 2013 --global
 ```
 
 After that, just clone and build it locally:
