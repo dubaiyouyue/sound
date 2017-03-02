@@ -13,7 +13,7 @@ export class PlayingIcon extends React.Component {
 			items.push(<div key={i} className={'react' + i} style={{
 				'backgroundColor': this.props.reactColor,
 				'WebkitAnimationDelay': (-1.2 + this.props.reactDelay * i) + 's',
-    			'animation': 'stretchdelay ' + this.props.animateDelay + 's infinite ease-in-out'
+				'animation': 'stretchdelay ' + this.props.animateDelay + 's infinite ease-in-out'
 			}} ></div>);
 		}
 

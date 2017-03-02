@@ -19,7 +19,7 @@ export class Loading extends React.Component {
 			items.push(<div key={i} className={'react' + i} style={{
 				'backgroundColor': this.props.reactColor,
 				'WebkitAnimationDelay': (-1.2 + this.props.reactDelay * i) + 's',
-    			'animationDelay': (-1.2 + this.props.reactDelay * i) + 's'
+				'animationDelay': (-1.2 + this.props.reactDelay * i) + 's'
 			}} ></div>);
 		}
 
